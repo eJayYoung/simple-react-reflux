@@ -1,7 +1,7 @@
 {
-  "name": "simple-react-reflux",
+  "name": "simple-react-reflux-todoList",
   "version": "1.0.0",
-  "description": "a simple react+es6+webpack+reflux tutrial",
+  "description": "a simple react+es6+webpack+reflux todoList",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",

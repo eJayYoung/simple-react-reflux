@@ -9,6 +9,7 @@ const Store = require("./store");
 
 const TodoHeader = require("./components/TodoHeader/index");
 const TodoList = require("./components/TodoList/index");
+const TodoSummary = require("./components/TodoSummary/index");
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +18,10 @@ class App extends React.Component {
     ["addTodo"].map(item => {
       this[item] = this[item].bind(this);
     })
+  }
+  componentWillMount() {
+    const me = this;
+    Actions.getDoneCount();
   }
   addTodo(item) {
     const me = this;
@@ -31,12 +36,20 @@ class App extends React.Component {
       changeIsDone: Actions.changeIsDone,
       delItem: Actions.delItem
     }
+    const summaryProps = {
+      listData: state.data.itemList,
+      doneCount: state.data.doneCount,
+      checkAll: Actions.checkAll,
+      allChecked: state.data.allChecked,
+      clearAllDone: Actions.clearAllDone
+    };
     return (
       <div>
         <h1>React Todos</h1>
         <div className="content">
           <TodoHeader addTodo={me.addTodo} />
           <TodoList {...todoListProps} />
+          <TodoSummary {...summaryProps}/>
         </div>
       </div>
     );
