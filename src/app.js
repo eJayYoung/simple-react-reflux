@@ -28,7 +28,8 @@ class App extends React.Component {
     const {state} = me;
     let todoListProps = {
       listData: state.data.itemList,
-      changeIsDone: Actions.changeIsDone
+      changeIsDone: Actions.changeIsDone,
+      delItem: Actions.delItem
     }
     return (
       <div>
