@@ -1,4 +1,5 @@
 import Reflux from 'Reflux';
 module.exports = Reflux.createActions([
-  'addTodo'
+  'addTodo',
+  'changeIsDone'
 ])

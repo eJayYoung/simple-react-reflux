@@ -8,6 +8,7 @@ const Actions = require("./actions");
 const Store = require("./store");
 
 const TodoHeader = require("./components/TodoHeader/index");
+const TodoList = require("./components/TodoList/index");
 
 class App extends React.Component {
   constructor(props) {
@@ -24,11 +25,17 @@ class App extends React.Component {
   }
   render() {
     const me = this;
+    const {state} = me;
+    let todoListProps = {
+      listData: state.data.itemList,
+      changeIsDone: Actions.changeIsDone
+    }
     return (
       <div>
         <h1>React Todos</h1>
         <div className="content">
           <TodoHeader addTodo={me.addTodo} />
+          <TodoList {...todoListProps} />
         </div>
       </div>
     );
