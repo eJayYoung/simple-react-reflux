@@ -8,7 +8,7 @@
 
 # Demo Show
  
- ![img](https://github.com/eJayYoung/simple-react-reflux/react-todos-demoShow.gif)
+ ![img](https://github.com/eJayYoung/simple-react-reflux/blob/master/react-todos-demoShow.gif)
 
 # PS
 
