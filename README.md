@@ -6,6 +6,10 @@
     npm install
     npm run start
 
+# Demo Show
+ 
+ ![img](https://github.com/eJayYoung/simple-react-reflux/react-todos-demoShow.gif)
+
 # PS
 
 后续还会继续把reflux的基本API的使用和流程记录下来
