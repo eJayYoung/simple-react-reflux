@@ -1,0 +1,42 @@
+.todoList{
+  margin-top: 20px;
+  clear: both;
+  li{
+    list-style: none;
+    height: 29px;
+    line-height: 30px;
+    border-bottom: 1px solid #ccc;
+    input{
+      margin-right: 20px;
+      transform: scale(1.5);
+      outline: none;
+    }
+    .isDone{
+      text-decoration: line-through;
+    }
+    .del{
+      float: right;
+      display: none;
+      line-height: 20px;
+      margin-top: 4px;
+      padding: 0 20px;
+      border: 1px solid #666;
+      border-radius: 30px;
+      transition: .5s all ease;
+    }
+    &:hover{
+      .del{
+        display: inline-block;
+        cursor: pointer;
+        &:hover{
+          background: #80b3ff;
+          color: #fff;
+          border-color: #80b3ff;
+        }
+        &:active{
+          transform: translateY(3px);
+        }
+      }
+    }
+  }
+}
