@@ -49,11 +49,7 @@ const Store = Reflux.createStore({
     const me = this;
     me.data.allChecked = !me.data.allChecked;
     me.data.itemList.map(n => {
-      if(me.data.allChecked) {
-        n.isDone = true;
-      }else{
-        n.isDone = false;
-      }
+      n.isDone = !me.data.allChecked;
     })
     me.updataComponent();
     DB.override(me.data.itemList,true);
