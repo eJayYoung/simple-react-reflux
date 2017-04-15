@@ -49,7 +49,7 @@ const Store = Reflux.createStore({
     const me = this;
     me.data.allChecked = !me.data.allChecked;
     me.data.itemList.map(n => {
-      n.isDone = !me.data.allChecked;
+      n.isDone = me.data.allChecked;
     })
     me.updataComponent();
     DB.override(me.data.itemList,true);
@@ -58,6 +58,7 @@ const Store = Reflux.createStore({
   onClearAllDone() {
     const me = this;
     me.data.itemList = me.data.itemList.filter((item) => !item.isDone);
+    me.data.allChecked = false;
     me.updataComponent();
     DB.override(me.data.itemList,true);
     me.onGetDoneCount();
